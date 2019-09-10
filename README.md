@@ -4,7 +4,7 @@ Deploy a local folder to a Google Cloud Function that can be triggered over HTTP
 
 ## Basic Usage
 
-```
+```hcl
 # Create a Storage Bucket to store the Cloud Functions in
 resource "google_storage_bucket" "cloudfunctions_bucket" {
   name   = "myproject-cloud-functions"
@@ -34,7 +34,7 @@ The module `terraform-google-http-cloud-function` will:
 
 ### Optional Variables and their defaults
 
-- `source_dir`= `./cloudfunctions/${var.name}`
+- `source_dir`= `"./cloudfunctions/${var.name}"`
 - `description`: `"${var.name} HTTP Cloud Function"`
 - `runtime`: `"python37"`
 - `entrypoint`: `"__main__"`
@@ -43,7 +43,7 @@ The module `terraform-google-http-cloud-function` will:
 
 ## Extended Example (Overriding the defaults)
 
-```
+```hcl
 # Create a Storage Bucket to store the Cloud Functions in
 resource "google_storage_bucket" "cloudfunctions_bucket" {
   name   = "myproject-cloud-functions"
