@@ -23,4 +23,5 @@ resource "google_cloudfunctions_function" "function" {
   timeout               = var.timeout
   entry_point           = "${var.entry_point}"
   runtime               = "${var.runtime}"
+  environment_variables = var.environment_variables
 }

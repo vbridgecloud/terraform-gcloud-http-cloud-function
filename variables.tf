@@ -48,11 +48,16 @@ variable "timeout" {
   default     = 60
 }
 
+variable "environment_variables" {
+  type        = map
+  description = "(Optional) A set of key/value environment variable pairs to assign to the function."
+  default     = {}
+}
+
 # @TODO
 
 # region
 # labels
 # service_account_email
-# environment_variables
 # vpc_connector
 # max_instances

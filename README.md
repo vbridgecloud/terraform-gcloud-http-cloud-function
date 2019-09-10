@@ -40,6 +40,7 @@ The module `terraform-google-http-cloud-function` will:
 - `entrypoint`: `"__main__"`
 - `available_memory_mb`: `128`
 - `timeout`: `60`
+- `environment_variables`= `{}`
 
 ## Extended Example (Overriding the defaults)
 
