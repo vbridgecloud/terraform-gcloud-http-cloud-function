@@ -7,7 +7,7 @@ data "archive_file" "function_zip" {
 
 # Store ziped code in the bucket
 resource "google_storage_bucket_object" "function_zip_bucket_object" {
-  name   = "${var.name}.zip"
+  name   = "${var.name}.${data.archive_file.function_zip.output_base64sha256}.zip"
   bucket = "${var.bucket_name}"
   source = "${data.archive_file.function_zip.output_path}"
 }
