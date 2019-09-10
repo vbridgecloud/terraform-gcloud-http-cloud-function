@@ -1,6 +1,6 @@
-# Google HTTP Cloud Function
+# Terraform Google HTTP Cloud Function
 
-Deploy a local folder to a Google Cloud Function that can be triggered over HTTP
+Terraform deploy a local folder to a Google Cloud Function that can be triggered over HTTP
 
 ## Basic Usage
 
