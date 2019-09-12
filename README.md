@@ -41,6 +41,7 @@ The module `terraform-google-http-cloud-function` will:
 - `available_memory_mb`: `128`
 - `timeout`: `60`
 - `environment_variables`= `{}`
+- `service_account_email` = `""`
 
 ## Extended Example (Overriding the defaults)
 
@@ -53,13 +54,14 @@ resource "google_storage_bucket" "cloudfunctions_bucket" {
 
 # Create a cloud function named `hello-world`
 module "cloudfunction--hello-world" {
-  source              = "github.com/vbridgebvba/terraform-google-http-cloud-function"
-  bucket_name         = "${google_storage_bucket.cloudfunctions_bucket.name}"
-  name                = "hello-world"
-  source_dir          = "./functions/hello-world/src"
-  runtime             = "nodejs10"
-  available_memory_mb = 512
-  timeout             = 120
+  source                 = "github.com/vbridgebvba/terraform-google-http-cloud-function"
+  bucket_name            = "${google_storage_bucket.cloudfunctions_bucket.name}"
+  name                   = "hello-world"
+  source_dir             = "./functions/hello-world/src"
+  runtime                = "nodejs10"
+  available_memory_mb    = 512
+  timeout                = 120
+  service_account_email = "cloud-function-invoker@project.iam.gserviceaccount.com"
 }
 ```
 

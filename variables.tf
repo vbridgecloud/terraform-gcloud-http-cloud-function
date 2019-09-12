@@ -54,10 +54,15 @@ variable "environment_variables" {
   default     = {}
 }
 
+variable "service_account_email" {
+  type        = "string"
+  description = "(Optional) If provided, the self-provided service account to run the function with."
+  default     = ""
+}
+
 # @TODO
 
 # region
 # labels
-# service_account_email
 # vpc_connector
 # max_instances
