@@ -65,4 +65,4 @@ module "cloudfunction--hello-world" {
 
 ## License
 
-`terraform-google-http-cloud-function` is released under the MIT License. See the enclosed [`LICENSE` file]](LICENSE) for details.
+`terraform-google-http-cloud-function` is released under the MIT License. See the enclosed [`LICENSE` file](LICENSE) for details.
