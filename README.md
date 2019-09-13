@@ -1,4 +1,4 @@
-# Terraform Google HTTP Cloud Function
+# Terraform Google Cloud Platform HTTP Cloud Function
 
 Terraform deploy a local folder to a Google Cloud Function that can be triggered over HTTP
 
@@ -13,13 +13,13 @@ resource "google_storage_bucket" "cloudfunctions_bucket" {
 
 # Create a cloud function named `hello-world`
 module "cloudfunction--hello-world" {
-  source      = "github.com/vbridgebvba/terraform-google-http-cloud-function"
+  source      = "github.com/vbridgebvba/terraform-gcloud-http-cloud-function"
   bucket_name = "${google_storage_bucket.cloudfunctions_bucket.name}"
   name        = "hello-world"
 }
 ```
 
-The module `terraform-google-http-cloud-function` will:
+The module `terraform-gcloud-http-cloud-function` will:
 
 1. Zip up the contents of the `./cloudfunctions/hello-world` folder
 2. Store the `hello-world.zip` file as an object into the bucket
@@ -54,7 +54,7 @@ resource "google_storage_bucket" "cloudfunctions_bucket" {
 
 # Create a cloud function named `hello-world`
 module "cloudfunction--hello-world" {
-  source                 = "github.com/vbridgebvba/terraform-google-http-cloud-function"
+  source                 = "github.com/vbridgebvba/terraform-gcloud-http-cloud-function"
   bucket_name            = "${google_storage_bucket.cloudfunctions_bucket.name}"
   name                   = "hello-world"
   source_dir             = "./functions/hello-world/src"
@@ -67,4 +67,4 @@ module "cloudfunction--hello-world" {
 
 ## License
 
-`terraform-google-http-cloud-function` is released under the MIT License. See the enclosed [`LICENSE` file](LICENSE) for details.
+`terraform-gcloud-http-cloud-function` is released under the MIT License. See the enclosed [`LICENSE` file](LICENSE) for details.
