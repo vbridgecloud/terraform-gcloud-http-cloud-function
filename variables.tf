@@ -55,7 +55,7 @@ variable "environment_variables" {
 }
 
 variable "service_account_email" {
-  type        = "string"
+  type        = string
   description = "(Optional) If provided, the self-provided service account to run the function with."
   default     = ""
 }

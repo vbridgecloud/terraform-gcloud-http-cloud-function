@@ -7,14 +7,14 @@ Terraform deploy a local folder to a Google Cloud Function that can be triggered
 ```hcl
 # Create a Storage Bucket to store the Cloud Functions in
 resource "google_storage_bucket" "cloudfunctions_bucket" {
-  name   = "myproject-cloud-functions"
+  name     = "myproject-cloud-functions"
   location = "europe-west3"
 }
 
 # Create a cloud function named `hello-world`
 module "cloudfunction--hello-world" {
   source      = "github.com/vbridgebvba/terraform-gcloud-http-cloud-function"
-  bucket_name = "${google_storage_bucket.cloudfunctions_bucket.name}"
+  bucket_name = google_storage_bucket.cloudfunctions_bucket.name
   name        = "hello-world"
 }
 ```
@@ -48,14 +48,14 @@ The module `terraform-gcloud-http-cloud-function` will:
 ```hcl
 # Create a Storage Bucket to store the Cloud Functions in
 resource "google_storage_bucket" "cloudfunctions_bucket" {
-  name   = "myproject-cloud-functions"
+  name     = "myproject-cloud-functions"
   location = "europe-west3"
 }
 
 # Create a cloud function named `hello-world`
 module "cloudfunction--hello-world" {
   source                 = "github.com/vbridgebvba/terraform-gcloud-http-cloud-function"
-  bucket_name            = "${google_storage_bucket.cloudfunctions_bucket.name}"
+  bucket_name            = google_storage_bucket.cloudfunctions_bucket.name
   name                   = "hello-world"
   source_dir             = "./functions/hello-world/src"
   runtime                = "nodejs10"
