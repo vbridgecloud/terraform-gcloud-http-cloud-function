@@ -60,9 +60,14 @@ variable "service_account_email" {
   default     = ""
 }
 
+variable "vpc_connector" {
+  type        = string
+  description = "(Optional) If provided, the vpc connector to use"
+  default     = null
+}
+
 # @TODO
 
 # region
 # labels
-# vpc_connector
 # max_instances

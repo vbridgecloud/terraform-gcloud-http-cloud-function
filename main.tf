@@ -25,4 +25,5 @@ resource "google_cloudfunctions_function" "function" {
   runtime               = var.runtime
   environment_variables = var.environment_variables
   service_account_email = var.service_account_email
+  vpc_connector         = var.vpc_connector
 }

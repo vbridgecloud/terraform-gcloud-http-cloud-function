@@ -42,6 +42,7 @@ The module `terraform-gcloud-http-cloud-function` will:
 - `timeout`: `60`
 - `environment_variables`= `{}`
 - `service_account_email` = `""`
+- `vpc_connector` = `null`
 
 ## Extended Example (Overriding the defaults)
 
@@ -61,7 +62,8 @@ module "cloudfunction--hello-world" {
   runtime                = "nodejs10"
   available_memory_mb    = 512
   timeout                = 120
-  service_account_email = "cloud-function-invoker@project.iam.gserviceaccount.com"
+  service_account_email  = "cloud-function-invoker@project.iam.gserviceaccount.com"
+  vpc_connector          = "vpc-access-connector-name"
 }
 ```
 
