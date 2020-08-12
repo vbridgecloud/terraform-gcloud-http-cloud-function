@@ -43,6 +43,7 @@ The module `terraform-gcloud-http-cloud-function` will:
 - `environment_variables`= `{}`
 - `service_account_email` = `""`
 - `vpc_connector` = `null`
+- `max_instances` = `null`
 
 ## Extended Example (Overriding the defaults)
 
@@ -64,6 +65,7 @@ module "cloudfunction--hello-world" {
   timeout                = 120
   service_account_email  = "cloud-function-invoker@project.iam.gserviceaccount.com"
   vpc_connector          = "vpc-access-connector-name"
+  max_instances          = 200
 }
 ```
 

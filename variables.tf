@@ -66,8 +66,13 @@ variable "vpc_connector" {
   default     = null
 }
 
+variable "max_instances" {
+  type        = number
+  description = "(Optional) Limit the degree to which your function will scale in response to incoming requests."
+  default     = null
+}
+
 # @TODO
 
 # region
 # labels
-# max_instances
