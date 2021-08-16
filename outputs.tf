@@ -19,7 +19,7 @@ output "zip_name" {
 }
 
 output "function_name" {
-  value       = google_cloudfunctions_function.function.name}"
+  value       = google_cloudfunctions_function.function.name
   description = "Name of the cloud function"
 }
 
